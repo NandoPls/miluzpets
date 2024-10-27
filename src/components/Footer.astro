@@ -1,0 +1,54 @@
+---
+// src/components/Footer.astro
+---
+<footer>
+    <div class="social-links">
+      <a href="https://instagram.com/codetails.cl" target="_blank" rel="noopener noreferrer">
+        <img src="/images/instagram-icon.svg" alt="Instagram" />
+      </a>
+      <a href="https://wa.me/TUNUMERODEWHATSAPP" target="_blank" rel="noopener noreferrer">
+        <img src="/images/whatsapp-icon.svg" alt="WhatsApp" />
+      </a>
+      <div class="contact-info">
+        <img src="/images/email-icon.svg" alt="Email" id="email-icon" />
+        <span id="email-address">contacto@codetails.cl</span>
+        <img src="/images/copy-icon.svg" alt="Copiar Email" id="copy-icon" style="cursor: pointer; width: 20px; height: 20px;">
+      </div>
+    </div>
+    <p>&copy; 2024 Codetails.cl. Todos los derechos reservados.</p>
+  </footer>
+  
+  <script>
+    document.getElementById('copy-icon').addEventListener('click', () => {
+      const email = document.getElementById('email-address').innerText;
+      navigator.clipboard.writeText(email).then(() => {
+        alert('Correo electrónico copiado al portapapeles.');
+      }).catch(err => {
+        console.error('Error al copiar el correo:', err);
+      });
+    });
+  </script>
+  
+  <style>
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .social-links{
+        width: 25px;
+        height: 25px;
+    }
+
+    #email-icon{
+        width: 25px;
+        height: 25px;
+    }
+    #email-address {
+      font-size: 1rem;
+    }
+    
+  </style>
+  

@@ -1,0 +1,97 @@
+---
+/* src/components/Header.astro */
+---
+<header>
+    <div class="header-container">
+      <img src="/images/logo.png" alt="Miluz Store Logo" class="logo" />
+      <div class="header-text">
+        <h1>Miluz Store</h1>
+        <p>
+          Apasionados por los animales, ofrecemos servicios confiables y de calidad.
+        </p>
+      </div>
+    </div>
+  </header>
+  
+  <style>
+    /* Reset básico */
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+  
+    header {
+      background-color: #ffffff;
+      width: 100%;
+      padding: 20px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .logo {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+  
+    .header-text h1 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 32px;
+      color: #333333;
+      margin-bottom: 10px;
+    }
+  
+    .header-text p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      color: #666666;
+      max-width: 600px;
+    }
+  
+    /* Estilos modernos y "con onda" */
+    @media (min-width: 768px) {
+      .header-container {
+        flex-direction: row;
+        text-align: left;
+      }
+  
+      .logo {
+        width: 150px;
+        margin-bottom: 0;
+        margin-right: 30px;
+      }
+  
+      .header-text h1 {
+        font-size: 36px;
+      }
+  
+      .header-text p {
+        font-size: 18px;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .logo {
+        width: 100px;
+      }
+  
+      .header-text h1 {
+        font-size: 24px;
+      }
+  
+      .header-text p {
+        font-size: 14px;
+      }
+    }
+  </style>
+  

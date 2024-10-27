@@ -1,0 +1,79 @@
+---
+// src/components/ProductCard.astro
+const { image, title, description, prices } = Astro.props;
+---
+<article class="product-card">
+  <img src={image} alt={title} />
+  <div class="product-content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <ul>
+      {prices.map(({ quantity, price }) => (
+        <li>{quantity} m³: <strong>${price}</strong></li>
+      ))}
+    </ul>
+    <a href="#contacto" class="btn">Contáctanos</a>
+  </div>
+</article>
+
+<style>
+  .product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .product-content {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-content h3 {
+    margin-bottom: 0.5rem;
+    color: #007BFF;
+  }
+
+  .product-content p {
+    flex: 1;
+    margin-bottom: 1rem;
+  }
+
+  .product-content ul {
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+
+  .product-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .btn {
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+</style>
