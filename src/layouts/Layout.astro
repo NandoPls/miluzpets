@@ -2,16 +2,31 @@
 // src/layouts/Layout.astro
 const { title } = Astro.props;
 ---
-<!DOCTYPE html>
-<html lang="es">
+
+
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <link rel="stylesheet" href="/styles/global.css">
+    
   </head>
   <body>
-    <slot />
+    <div>
+      <slot>
+
+    </div>
+
   </body>
 </html>
+
+<style is:global>
+
+body{
+  @apply grid place-content-center p-20;
+
+}
+
+body > div {
+  @apply container;
+}
+
+</style>
